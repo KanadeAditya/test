@@ -1,12 +1,12 @@
 let palindrome = "ada"
-let count=0
+let c=0
 for ( i=0 ; i<palindrome.length ; i++){
     if(palindrome[i]==palindrome[palindrome.length-1-i]){
-        count++
+        c++
     }
 }
 
-if(count==palindrome.length){
+if(c==palindrome.length){
     console.log("yes")
 }else{
  
