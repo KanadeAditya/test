@@ -1,4 +1,5 @@
 const {TodoModel} = require("../models/todos.model.js");
+const cors = require("cors");
 const express = require("express");
 const mongoose = require("mongoose");
 const jwt = require("jsonwebtoken");
@@ -7,6 +8,7 @@ require("dotenv").config();
 
 const {authenticator} = require("../middlewares/authenticate.js");
 const todosRouter = express.Router();
+todosRouter.use(cors());
 todosRouter.use(express.json());
 todosRouter.use(authenticator);
 

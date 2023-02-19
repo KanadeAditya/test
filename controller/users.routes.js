@@ -1,4 +1,5 @@
 const {UserModel} = require("../models/users.model.js");
+const cors = require("cors");
 const express = require("express");
 const mongoose = require("mongoose");
 const jwt = require("jsonwebtoken");
@@ -7,6 +8,7 @@ require("dotenv").config();
 
 const userRouter = express.Router();
 userRouter.use(express.json())
+userRouter.use(cors());
 
 userRouter.get("/",async (req,res)=>{
     const alluser = await UserModel.find();
